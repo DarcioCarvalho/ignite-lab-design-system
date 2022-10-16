@@ -21,9 +21,8 @@ module.exports = {
     "../public"
   ],
   viteFinal: (config, { configType }) => {
-    console.log('configType: ', configType);
 
-    if (configType === 'PRODUCTION') {
+    if (configType === 'PRODUCTION' || 'DEVELOPMENT') {
       config.base = '/ignite-lab-design-system/'
     }
 
