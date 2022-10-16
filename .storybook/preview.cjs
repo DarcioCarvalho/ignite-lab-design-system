@@ -4,7 +4,10 @@ import { themes } from '@storybook/theming';
 import '../src/styles/global.css';
 
 initialize({
-  onUnhandledRequest: 'bypass'
+  onUnhandledRequest: 'bypass',
+  serviceWorker: {
+    url: '/ignite-lab-design-system/mockServiceWorker.js'
+  }
 });
 
 export const decorators = [mswDecorator];
