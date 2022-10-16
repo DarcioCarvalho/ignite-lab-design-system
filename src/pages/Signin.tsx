@@ -15,10 +15,14 @@ export function Signin() {
   async function handleSignIn(event: FormEvent) {
     event.preventDefault();
 
-    await axios.post('/sessions', {
+    const response = await axios.post('/sessions', {
       email: 'darcio.nuno@gmail.com',
       password: '123456'
-    })
+    });
+
+    console.log('Resposta da chamada Post: ', response);
+    console.log('response.config.data: ', response.config.data);
+    console.log('response.data: ', response.data);
 
     setIsUserSignedIn(true);
   }
