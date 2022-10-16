@@ -3,10 +3,12 @@ import { themes } from '@storybook/theming';
 
 import '../src/styles/global.css';
 
+const isDevelopment = window.CONFIG_TYPE === 'DEVELOPMENT';
+
 initialize({
   onUnhandledRequest: 'bypass',
   serviceWorker: {
-    url: '/ignite-lab-design-system/mockServiceWorker.js'
+    url: isDevelopment ? 'mockServiceWorker.js' : '/ignite-lab-design-system/mockServiceWorker.js'
   }
 });
 
